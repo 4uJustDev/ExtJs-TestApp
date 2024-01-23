@@ -21,21 +21,21 @@ Ext.define('MyApp.view.main.Main', {
 
     ui: 'navigation',
 
-    //tabBarHeaderPosition: 1,
-    //titleRotation: 0,
-    //tabRotation: 0,
-    // header: {
-    //     layout: {
-    //         align: 'stretchmax'
-    //     },
-    //     title: {
-    //         bind: {
-    //             text: 'Учет товаров'
-    //         },
-    //         flex: 0
-    //     },
-    //     iconCls: 'fa-th-list'
-    // },
+    tabBarHeaderPosition: 1,
+    titleRotation: 0,
+    tabRotation: 0,
+    header: {
+        layout: {
+            align: 'stretchmax'
+        },
+        title: {
+            bind: {
+                text: 'Учет товаров'
+            },
+            flex: 0
+        },
+        iconCls: 'fa-th-list'
+    },
 
     // responsiveConfig: {
     //     tall: {
@@ -45,13 +45,13 @@ Ext.define('MyApp.view.main.Main', {
     //         headerPosition: 'left'
     //     }
     // },
-    // tabBar: {
-    //     flex: 1,
-    //     layout: {
-    //         align: 'stretch',
-    //         overflowHandler: 'none'
-    //     }
-    // },
+    tabBar: {
+        flex: 1,
+        layout: {
+            align: 'stretch',
+            overflowHandler: 'none'
+        }
+    },
     
     defaults: {
         bodyPadding: 20,
@@ -81,32 +81,9 @@ Ext.define('MyApp.view.main.Main', {
         title: 'Exit',
         iconCls: 'fa-lock',
         split: true,
-        //handler: 'onClickButtonDestroy'
         tbar: [{
             text: 'Button',
             handler: 'onClickButtonDestroy'
         }]
     }]
 });
-//     items: [{    
-//         xtype: 'panel',
-//         bind: {
-//             title: '{name}'
-//         },
-//         region: 'west',
-//         html: '<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>',
-//         width: 250,
-//         split: true,
-//         tbar: [{
-//             text: 'Button',
-//             handler: 'onClickButtonDestroy'
-//         }]
-//     },{
-//         region: 'center',
-//         xtype: 'tabpanel',
-//         items:[{
-//             title: 'Tab 1',
-//             html: '<h2>Content appropriate for the current navigation.</h2>'
-//         }]
-//     }]
-// });

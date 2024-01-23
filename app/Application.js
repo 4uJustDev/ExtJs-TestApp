@@ -21,6 +21,9 @@ Ext.define('MyApp.Application', {
         // any type of storage, i.e., Cookies, LocalStorage, etc.
         var loggedIn;
 
+        //DEV
+        //localStorage.removeItem('TutorialLoggedIn');
+
         // Check to see the current value of the localStorage key
         loggedIn = localStorage.getItem("TutorialLoggedIn");
 

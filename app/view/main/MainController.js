@@ -9,6 +9,8 @@ Ext.define('MyApp.view.main.MainController', {
 
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+        let test = record.data;
+        console.log(test);
     },
 
     onConfirm: function (choice) {
