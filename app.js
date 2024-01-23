@@ -14,5 +14,10 @@ Ext.application({
     ],
 
     // The name of the initial view to create.
-    mainView: 'MyApp.view.main.Main'
+    //mainView: 'MyApp.view.main.Main',
+
+    // Add a method to show the main view
+    showMainView: function () {
+        Ext.create('MyApp.view.main.Main');
+    }
 });

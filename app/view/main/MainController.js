@@ -15,5 +15,19 @@ Ext.define('MyApp.view.main.MainController', {
         if (choice === 'yes') {
             //
         }
+    },
+
+    onClickButtonDestroy: function () {
+
+        // Remove the localStorage key/value
+        localStorage.removeItem('TutorialLoggedIn');
+
+        // Remove Main View
+        this.getView().destroy();
+
+        // Add the Login Window
+        Ext.widget('login');
+
+        //Ext.Msg.alert('Wrong data', 'Please check your LOGIN or PASSWORD!');
     }
 });
