@@ -18,7 +18,7 @@ Ext.define('MyApp.view.login.LoginController', {
                 let password = formValues.password;
     
                 // Check if the username and password are "admin"
-                if (username === 'admin' && password === 'admin') {
+                if (username === 'admin' && password === 'padmin') {
                     // Set the localStorage value to true
                     localStorage.setItem("TutorialLoggedIn", true);
     

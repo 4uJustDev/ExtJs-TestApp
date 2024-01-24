@@ -32,7 +32,7 @@ Ext.define('MyApp.view.main.MainController', {
         // Add the Login Window
         Ext.widget('login');
 
-        Ext.Msg.alert('Wrong data', 'Please check your LOGIN or PASSWORD!');
+        //Ext.Msg.alert('Wrong data', 'Please check your LOGIN or PASSWORD!');
     },
 
     onAddTabClick: function() {

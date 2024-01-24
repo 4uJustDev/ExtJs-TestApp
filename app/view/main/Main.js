@@ -34,7 +34,7 @@ Ext.define('MyApp.view.main.Main', {
         text: 'Выйти',
         tooltip: 'Выйти из аккаунта!',
         listeners: {
-            toggle: 'onClickButtonDestroy'
+            click: 'onClickButtonDestroy'
         },
     }],
 
