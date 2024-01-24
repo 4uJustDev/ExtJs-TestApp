@@ -3,7 +3,7 @@ Ext.define('MyApp.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'MyApp.store.Personnel'
+        'MyApp.store.Product'
     ],
 
     items: [{
@@ -14,7 +14,7 @@ Ext.define('MyApp.view.main.List', {
 			padding: '10, 10 0 10',
 			flex: 1,
 			store: {
-				type: 'Personnel'
+				type: 'Product'
 			},
 			columns: [{
 					text: 'ID',

@@ -1,10 +1,10 @@
-Ext.define('MyApp.store.Personnel', {
+Ext.define('MyApp.store.Product', {
     extend: 'Ext.data.Store',
 
-    alias: 'store.Personnel',
-    xtype: 'dataPersonnel',
+    alias: 'store.Product',
+    xtype: 'dataProduct',
 
-    model: 'MyApp.model.Personnel',
+    model: 'MyApp.model.Product',
     id: 'StoreProducts',
 
     data: { items: [

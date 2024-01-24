@@ -2,7 +2,7 @@ Ext.define('MyApp.view.card.CardController', {
 	extend: 'Ext.app.ViewController',
 	alias: 'controller.card-panel',
 	requires: [
-		'MyApp.store.Personnel'
+		'MyApp.store.Product'
 	],
 
 	clickOnCancelCard: function () { 

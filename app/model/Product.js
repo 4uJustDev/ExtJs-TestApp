@@ -1,4 +1,4 @@
-Ext.define('MyApp.model.Personnel', {
+Ext.define('MyApp.model.Product', {
     extend: 'MyApp.model.Base',
 
     fields: [
