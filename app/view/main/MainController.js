@@ -7,6 +7,8 @@ Ext.define('MyApp.view.main.MainController', {
 
     alias: 'controller.main',
 
+    counter: 3,
+
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
         let test = record.data;
@@ -30,6 +32,17 @@ Ext.define('MyApp.view.main.MainController', {
         // Add the Login Window
         Ext.widget('login');
 
-        //Ext.Msg.alert('Wrong data', 'Please check your LOGIN or PASSWORD!');
-    }
+        Ext.Msg.alert('Wrong data', 'Please check your LOGIN or PASSWORD!');
+    },
+
+    onAddTabClick: function() {
+        var tabPanel = this.lookupReference('tabpanel'),
+            counter = ++this.counter,
+            tab = tabPanel.add({
+                title: 'Tab ' + counter,
+                xtype: 'mainlist'
+            });
+
+        tabPanel.setActiveTab(tab);
+    },
 });
