@@ -10,6 +10,42 @@ Ext.define('MyApp.view.main.List', {
 			title: 'Список товаров',
 			padding: '20 10 0 10',
         },{
+            padding: '20 10 0 10',
+            items: [{
+				xtype: 'textfield',
+				fieldLabel: 'ID:',
+				listeners: {
+					specialkey: function (field, e) 
+					{
+						if (e.getKey() === e.ENTER) {
+                            let value = field.getValue();
+                            let gridPanel = field.up('mainlist').down('gridpanel');
+                            console.log(value);
+                            console.log(gridPanel);
+                            if (value) {
+                                gridPanel.getStore().clearFilter();
+                                gridPanel.getStore().addFilter({
+                                    id: 'filterId',
+                                    filterFn: function (record) {
+                                        return record.get('id') === parseInt(value);
+                                    }
+                                });
+                            } else {
+                                gridPanel.getStore().clearFilter();
+                            }
+                        }
+					}
+				}
+            },{
+				xtype: 'textfield', 
+				fieldLabel: 'Описание:',
+                listeners: {
+                    change: function (field) {
+                        applyFilter(field, 'description');
+                    }
+                }
+            }]
+        },{
 			xtype: 'gridpanel',
 			padding: '10, 10 0 10',
 			flex: 1,
@@ -52,3 +88,20 @@ Ext.define('MyApp.view.main.List', {
 		},
     ]
 });
+
+function applyFilter(field, dataIndex) {
+    let value = field.getValue();
+    let gridPanel = field.up('mainlist').down('gridpanel');
+
+    if (value) {
+        gridPanel.getStore().clearFilter();
+        gridPanel.getStore().addFilter({
+            id: 'filter' + dataIndex.charAt(0).toUpperCase() + dataIndex.slice(1), // Unique filter id
+            filterFn: function (record) {
+                return record.get(dataIndex).toLowerCase().includes(value.toLowerCase());
+            }
+        });
+    } else {
+        gridPanel.getStore().clearFilter();
+    }
+}
