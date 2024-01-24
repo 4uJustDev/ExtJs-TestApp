@@ -5,7 +5,6 @@ Ext.define('MyApp.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'MyApp.view.main.MainController',
-        'MyApp.view.main.MainModel',
     ],
 
     controller: 'main',

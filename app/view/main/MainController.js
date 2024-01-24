@@ -1,35 +1,33 @@
-/**
- * This class is the controller for the main view for the application. It is specified as
- * the "controller" of the Main view class.
- */
 Ext.define('MyApp.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.main',
 
     counter: 3,
-
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-        let test = record.data;
-        console.log(test);
+    
+    testFunc: function(){
+        Ext.Msg.alert('Test MSG', 'Work!');
     },
-
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
+    onItemSelected: function (sender, record) {
+        console.log(record.get('name'));
+        let itemCard = Ext.create({
+            xtype: 'itemcard'
+        }); 
+        let card = itemCard.down('#itemForm');
+        card.down('[name=id]').setValue(record.get('id'));
+        card.down('[name=name]').setValue(record.get('name'));
+        card.down('[name=price]').setValue(record.get('price'));
+        card.down('[name=amount]').setValue(record.get('amount'));
+        
+        itemCard.show();
     },
 
     onClickButtonDestroy: function () {
 
-        // Remove the localStorage key/value
         localStorage.removeItem('TutorialLoggedIn');
 
-        // Remove Main View
         this.getView().destroy();
 
-        // Add the Login Window
         Ext.widget('login');
 
         //Ext.Msg.alert('Wrong data', 'Please check your LOGIN or PASSWORD!');

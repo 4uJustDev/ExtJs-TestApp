@@ -1,15 +1,16 @@
 Ext.define('MyApp.store.Personnel', {
     extend: 'Ext.data.Store',
 
-    alias: 'store.personnel',
+    alias: 'store.Personnel',
+    xtype: 'dataPersonnel',
 
     model: 'MyApp.model.Personnel',
+    id: 'StoreProducts',
 
     data: { items: [
-        { name: 'Jean Luc', email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
-        { name: 'Worf',     email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
-        { name: 'Deanna',   email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
-        { name: 'Data',     email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+        { id: 1, name: "Processor", description: "Процессор Intel Core i5-12400F OEM", price: 14799, amount: 91 },
+        { id: 2, name: "VideoCard", description: "Видеокарта MSI GeForce RTX 4070 VENTUS 3X E OC [GeForce RTX 4070 VENTUS 3X E 12G OC]", price: 71499, amount: 123 },
+        { id: 3, name: "Motherboard", description: "Материнская плата MSI PRO H610M-E DDR4", price: 7499, amount: 0 },
     ]},
 
     proxy: {
