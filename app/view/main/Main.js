@@ -24,13 +24,13 @@ Ext.define('MyApp.view.main.Main', {
         xtype: 'button',
         text:'Добавить',
         glyph: 43,
-        tooltip: 'Добавить карточку',
+        tooltip: 'Товары',
         listeners: {
             click: 'onAddTabClick'
         }
     }, {
         xtype: 'button',
-        text: 'Выйти',
+        text: 'Выход',
         tooltip: 'Выйти из аккаунта!',
         listeners: {
             click: 'onClickButtonDestroy'

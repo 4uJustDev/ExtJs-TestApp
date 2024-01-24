@@ -47,12 +47,13 @@ Ext.define('MyApp.view.main.List', {
             }]
         },{
 			xtype: 'gridpanel',
+			reference: 'gridpanel',
 			padding: '10, 10 0 10',
 			flex: 1,
 			store: {
 				type: 'Product'
 			},
-			columns: [{
+			columns: [{	
 					text: 'ID',
 					dataIndex: 'id',
 					groupable: true,
