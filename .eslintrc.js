@@ -1,13 +1,26 @@
 module.exports = {
-  extends: 'eslint:recommended',
-  root: true,
-  ignorePatterns: ['.eslintrc.js'],
-  parserOptions: {
-    "sourceType": "module"
+  'env': {
+    'browser': true,
+    'commonjs': true,
+    'es2021': true
   },
-  rules: {
-    'quotes': ['error', 'single'],
-    'indent': ['error', 4],
-    'no-multi-spaces': ['error']
+  'overrides': [
+    {
+      'env': {
+        'node': true
+      },
+      'files': [
+        '.eslintrc.{js,cjs}'
+      ],
+      'parserOptions': {
+        'sourceType': 'script'
+      }
+    }
+  ],
+  'parserOptions': {
+    'ecmaVersion': 'latest'
+  },
+  'rules': {
+    'indent': ['error', 2],
   }
-};
+}
