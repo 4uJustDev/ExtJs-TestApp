@@ -1,7 +1,7 @@
 Ext.define('MyApp.model.Base', {
-    extend: 'Ext.data.Model',
+  extend: 'Ext.data.Model',
 
-    schema: {
-        namespace: 'MyApp.model'
-    }
+  schema: {
+    namespace: 'MyApp.model'
+  }
 });
