@@ -16,15 +16,9 @@ Ext.define('MyApp.Application', {
     }
   },
     
-  launch: function () {
-    // Variable for check log in
-    let loggedIn;
-
-    //DEV
-    //localStorage.removeItem('TutorialLoggedIn');
-
+  launch () {
     // Getting the status of login
-    loggedIn = localStorage.getItem("TutorialLoggedIn");
+    const loggedIn = localStorage.getItem("TutorialLoggedIn");
 
     // Show main window or login page
     Ext.widget(loggedIn ? 'app-main' : 'login');

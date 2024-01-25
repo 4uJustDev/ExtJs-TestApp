@@ -2,25 +2,25 @@ Ext.define('MyApp.view.login.LoginController', {
   extend: 'Ext.app.ViewController',
   alias: 'controller.login',
 
-  onLoginClick: function() {
+  onLoginClick () {
     // Get the form from the view using down method
-    let form = this.getView().down('form');
+    const form = this.getView().down('form');
     
     // Check if the form is found
     if (form) {
       // Check if the form is valid
       if (form.isValid()) {
         // Get the form values
-        let formValues = form.getValues();
+        const formValues = form.getValues();
     
         // Get the username and password from the form
-        let username = formValues.username;
-        let password = formValues.password;
+        const username = formValues.username;
+        const password = formValues.password;
     
         // Check if the username and password are "admin"
         if (username === 'admin' && password === 'padmin') {
           // Set the localStorage value to true
-          localStorage.setItem("TutorialLoggedIn", true);
+          localStorage.setItem('TutorialLoggedIn', true);
     
           // Remove Login Window
           this.getView().destroy();

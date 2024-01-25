@@ -4,12 +4,8 @@ Ext.define('MyApp.view.main.MainController', {
   alias: 'controller.main',
     
   counter: 3,
-    
-  testFunc: function(){
-    Ext.Msg.alert("Test MSG', 'Work!");
-  },
 
-  onItemSelected: function (sender, record) {
+  onItemSelected (sender, record) {
     // Use component query to find the mainlist within the viewport
     let mainlist = Ext.ComponentQuery.query('app-main mainlist')[0];
 
@@ -33,7 +29,7 @@ Ext.define('MyApp.view.main.MainController', {
     }
   },
 
-  onClickButtonDestroy: function () {
+  onClickButtonDestroy () {
     localStorage.removeItem('TutorialLoggedIn');
 
     this.getView().destroy();
@@ -41,7 +37,7 @@ Ext.define('MyApp.view.main.MainController', {
     Ext.widget('login');
   },
 
-  onAddTabClick: function() {
+  onAddTabClick () {
     let tabPanel = this.lookupReference('tabpanel');
 
     counter = ++this.counter;
@@ -53,4 +49,51 @@ Ext.define('MyApp.view.main.MainController', {
 
     tabPanel.setActiveTab(tab);
   },
+
+  forRender (value, meta){
+    if(parseInt(value) === 0) meta.style = "background-color:red;";
+    return value;
+      
+  },
+
+  forIdCheck (field, e) 
+  {
+    if (e.getKey() === e.ENTER) {
+      const value = field.getValue();
+
+      // Reference on Table
+      const gridPanel = field.up('mainlist').down('gridpanel');
+
+      if (value) {
+        gridPanel.getStore().clearFilter();
+        gridPanel.getStore().addFilter({
+          id: 'filterId',
+          filterFn: function (record) {
+            return record.get('id') === parseInt(value);
+          }
+        })
+      } else {
+        // Nothing filter if empty field
+        gridPanel.getStore().clearFilter();
+      }
+    }
+  },
+
+  forDescriptionCheck (field) {
+    const dataIndex = 'description';
+    const value = field.getValue();
+    const gridPanel = field.up('mainlist').down('gridpanel');
+  
+    if (value) {
+      gridPanel.getStore().clearFilter();
+      gridPanel.getStore().addFilter({
+        id: 'filter' + dataIndex.charAt(0).toUpperCase() + dataIndex.slice(1),
+        filterFn: function (record) {
+          return record.get(dataIndex).toLowerCase().includes(value.toLowerCase());
+        }
+      });
+    } else {
+      gridPanel.getStore().clearFilter();
+    }
+  }
 });
