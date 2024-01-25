@@ -1,0 +1,30 @@
+{
+  "name": "extjs-testapp",
+  "version": "1.0.0",
+  "description": "This folder is primarily a container for the top-level pieces of the application.\r While you can remove some files and folders that this application does not use,\r be sure to read below before deciding what can be deleted and what needs to be\r kept in source control.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "sencha app watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4uJustDev/ExtJs-TestApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4uJustDev/ExtJs-TestApp/issues"
+  },
+  "homepage": "https://github.com/4uJustDev/ExtJs-TestApp#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}
