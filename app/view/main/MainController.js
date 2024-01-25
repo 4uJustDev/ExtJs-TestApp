@@ -7,18 +7,18 @@ Ext.define('MyApp.view.main.MainController', {
 
   onItemSelected (sender, record) {
     // Use component query to find the mainlist within the viewport
-    let mainlist = Ext.ComponentQuery.query('app-main mainlist')[0];
+    const mainlist = Ext.ComponentQuery.query('app-main mainlist')[0];
 
     // Use lookup method to find the grid panel within mainlist
-    let gridPanel = mainlist.down('gridpanel'); 
-    let clickedColumn = gridPanel.columns[1].config.text;
+    const gridPanel = mainlist.down('gridpanel'); 
+    const clickedColumn = gridPanel.columns[1].config.text;
 
     if(clickedColumn === 'Имя'){
-      let itemCard = Ext.create({
+      const itemCard = Ext.create({
         xtype: 'itemcard'
       }); 
             
-      let card = itemCard.down('#itemForm');
+      const card = itemCard.down('#itemForm');
             
       card.down('[name=id]').setValue(record.get('id'));
       card.down('[name=name]').setValue(record.get('name'));
